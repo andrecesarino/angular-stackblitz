@@ -1,0 +1,32 @@
+<h2>Oportunidades</h2>
+
+<div *ngFor="let oportunidade of oportunidades">
+
+  <h3>
+    <a [title]="oportunidade.nome + ' details'">
+      {{ oportunidade.nome }}
+    </a>
+  </h3>
+
+  <p *ngIf="oportunidade.descricao">
+    {{ oportunidade.descricao }}
+  </p>
+
+  <p *ngIf="oportunidade.valor">
+    Valor: ${{ oportunidade.valor }}
+  </p>
+
+  <button (click)="share()">
+    Fechar Negocio
+  </button>
+
+  <app-alerta-oportunidade
+    [oportunidade]="oportunidade">
+</app-alerta-oportunidade>
+</div>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
